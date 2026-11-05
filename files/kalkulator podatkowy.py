@@ -5,6 +5,8 @@ if zarobekRoczny <= 30000:
 elif 120000 >= zarobekRoczny > 30000 :
     print("twój zarobek stanowi: " , zarobekRoczny , "podatek stanowi: ", ((zarobekRoczny * 12) / 100)-3600)
 elif 1000000 >= zarobekRoczny > 120000:
-    print("twój zarobek stanowi: ", zarobekRoczny,  "podatek + danina solidarnościowa stanowi: ", ((((zarobekRoczny * 12) / 100) - 3600)*32) /100)
+    print("twój zarobek stanowi: ", zarobekRoczny,  "podatek + danina solidarnościowa stanowi: ", ((zarobekRoczny *32) /100))
 else:
     print("Ale jasteś biliarderem XD")
+
+#nadwyżka 120000 - 32%
