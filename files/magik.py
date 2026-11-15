@@ -1,6 +1,7 @@
 import random
 
 losowaLiczbaMagika = random.randint(0,100)
+# losujemy liczbe magika, obowiązkowo przed pętlami Zeby liczba nie zmieniała się za każdą próbą użytkownika ją zgadnąć
 
 print(
     """
@@ -14,12 +15,14 @@ print(
     """)
 
 def zgadywanieprzezu():
-    for i in range(5):
-        zgadywanie = int(input("podaj liczbę: "))
-        while zgadywanie != losowaLiczbaMagika:
+    # for i in range(5):
+    i = 0
+    while i < 5:
+           zgadywanie = int(input("podaj liczbę: "))
            if losowaLiczbaMagika == zgadywanie:
               print("Brawo! Zgadnąłeś/aś!")
-               return
+              return
+           # jeśli liczba zostanie zgadnięta, program kończy pracę
            elif losowaLiczbaMagika > zgadywanie:
               print("""
               +===============================================+
@@ -27,6 +30,8 @@ def zgadywanieprzezu():
               |moja liczba jest większa ;)                    |
               +===============================================+
               """)
+              i+=1
+           # przy każdej próbie + 1 do liczby prób użytkownika
            elif losowaLiczbaMagika < zgadywanie:
                print("""
                +===============================================+
@@ -34,9 +39,13 @@ def zgadywanieprzezu():
                |moja liczba jest mniejsza ;)                   |
                +===============================================+
                """)
-           else:
-                print("Twój czas się skończył")
-                return
+               i+=1
+           #  i tutaj też
+           # przy każdej próbie + 1 do liczby prób użytkownika
+           if i == 5 and losowaLiczbaMagika!=zgadywanie:
+                #jeślim próda = 5 i kiczba nie została zgadnięta 
+                print("twój czas się skończył :(")
 
 zgadywanieprzezu()
-# bez while
+# wywołanie funkcji
+
