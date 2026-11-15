@@ -19,6 +19,7 @@ def zgadywanieprzezu():
         while zgadywanie != losowaLiczbaMagika:
            if losowaLiczbaMagika == zgadywanie:
               print("Brawo! Zgadnąłeś/aś!")
+               return
            elif losowaLiczbaMagika > zgadywanie:
               print("""
               +===============================================+
@@ -26,7 +27,6 @@ def zgadywanieprzezu():
               |moja liczba jest większa ;)                    |
               +===============================================+
               """)
-              break
            elif losowaLiczbaMagika < zgadywanie:
                print("""
                +===============================================+
@@ -34,10 +34,9 @@ def zgadywanieprzezu():
                |moja liczba jest mniejsza ;)                   |
                +===============================================+
                """)
-               break
            else:
                 print("Twój czas się skończył")
-                break
+                return
 
 zgadywanieprzezu()
 # bez while
